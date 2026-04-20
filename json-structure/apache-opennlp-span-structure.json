@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-structure/apache-opennlp-span-structure.json",
+  "description": "Span schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "start": {
+      "type": "int32",
+      "description": "Start character offset",
+      "example": 0
+    },
+    "end": {
+      "type": "int32",
+      "description": "End character offset (exclusive)",
+      "example": 13
+    },
+    "type": {
+      "type": "string",
+      "description": "Span type if applicable",
+      "example": "person"
+    }
+  },
+  "name": "Span"
+}

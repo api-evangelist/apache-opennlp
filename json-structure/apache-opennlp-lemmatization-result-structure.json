@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-structure/apache-opennlp-lemmatization-result-structure.json",
+  "description": "LemmatizationResult schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "tokens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "running",
+        "faster"
+      ]
+    },
+    "lemmas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "run",
+        "fast"
+      ]
+    }
+  },
+  "name": "LemmatizationResult"
+}

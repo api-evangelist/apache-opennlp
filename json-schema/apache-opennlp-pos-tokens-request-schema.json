@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-schema/apache-opennlp-pos-tokens-request-schema.json",
+  "title": "POSTokensRequest",
+  "description": "POSTokensRequest schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "tokens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Pre-tokenized array of text tokens",
+      "example": [
+        "Pierre",
+        "Vinken",
+        "will",
+        "join"
+      ]
+    },
+    "posTags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "POS tags for each token",
+      "example": [
+        "NNP",
+        "NNP",
+        "MD",
+        "VB"
+      ]
+    }
+  },
+  "required": [
+    "tokens",
+    "posTags"
+  ]
+}

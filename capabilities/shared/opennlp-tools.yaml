@@ -1,0 +1,115 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Apache OpenNLP Tools API"
+  description: "Apache OpenNLP NLP toolkit providing language detection, sentence detection, tokenization, NER, POS tagging, lemmatization, chunking, and parsing."
+  tags:
+    - Apache OpenNLP
+    - Natural Language Processing
+    - Machine Learning
+    - Text Processing
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      OPENNLP_API_KEY: OPENNLP_API_KEY
+
+capability:
+  consumes:
+    - type: http
+      namespace: opennlp
+      baseUri: https://localhost:8080/opennlp
+      description: "Apache OpenNLP REST API"
+      resources:
+        - name: language-detection
+          path: /detect/language
+          description: "Language detection"
+          operations:
+            - name: detectLanguage
+              method: POST
+              description: "Detect the language of input text"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: sentence-detection
+          path: /detect/sentences
+          description: "Sentence boundary detection"
+          operations:
+            - name: detectSentences
+              method: POST
+              description: "Split text into sentences"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: tokenization
+          path: /tokenize
+          description: "Text tokenization"
+          operations:
+            - name: tokenize
+              method: POST
+              description: "Tokenize text into individual tokens"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: named-entity-recognition
+          path: /ner
+          description: "Named entity recognition"
+          operations:
+            - name: findNamedEntities
+              method: POST
+              description: "Find named entities in tokenized text"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: pos-tagging
+          path: /pos/tag
+          description: "Part-of-speech tagging"
+          operations:
+            - name: tagPartsOfSpeech
+              method: POST
+              description: "Assign POS tags to tokens"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: opennlp-rest
+      resources:
+        - path: /v1/language
+          name: language
+          description: "Language detection"
+          operations:
+            - method: POST
+              name: detect-language
+              description: "Detect language"
+              call: "opennlp.detectLanguage"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+    - type: mcp
+      port: 9100
+      namespace: opennlp-mcp
+      transport: http
+      tools:
+        - name: detect-language
+          description: "Detect the language of text"
+          hints:
+            readOnly: true
+          call: "opennlp.detectLanguage"
+          outputParameters:
+            - type: object
+              mapping: "$."

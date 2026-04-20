@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-schema/apache-opennlp-categorization-result-schema.json",
+  "title": "CategorizationResult",
+  "description": "CategorizationResult schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "bestCategory": {
+      "type": "string",
+      "description": "Most likely category label",
+      "example": "Sports"
+    },
+    "probabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      },
+      "description": "Probability for each category"
+    }
+  }
+}

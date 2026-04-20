@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-schema/apache-opennlp-chunking-result-schema.json",
+  "title": "ChunkingResult",
+  "description": "ChunkingResult schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "chunks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Chunk"
+      }
+    }
+  }
+}

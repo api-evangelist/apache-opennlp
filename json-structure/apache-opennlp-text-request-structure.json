@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-structure/apache-opennlp-text-request-structure.json",
+  "description": "TextRequest schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Input text to process",
+      "example": "Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29."
+    },
+    "language": {
+      "type": "string",
+      "description": "ISO-639-3 language code hint",
+      "example": "eng"
+    },
+    "modelId": {
+      "type": "string",
+      "description": "Specific model to use (optional)",
+      "example": "en-sent.bin"
+    }
+  },
+  "required": [
+    "text"
+  ],
+  "name": "TextRequest"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-structure/apache-opennlp-ner-result-structure.json",
+  "description": "NERResult schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/NamedEntity"
+      }
+    }
+  },
+  "name": "NERResult"
+}

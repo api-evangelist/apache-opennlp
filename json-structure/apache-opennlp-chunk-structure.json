@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-structure/apache-opennlp-chunk-structure.json",
+  "description": "Chunk schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Chunk text",
+      "example": "Pierre Vinken"
+    },
+    "type": {
+      "type": "string",
+      "description": "Chunk type",
+      "example": "NP",
+      "enum": [
+        "NP",
+        "VP",
+        "PP",
+        "ADJP",
+        "ADVP",
+        "SBAR",
+        "PRT",
+        "CONJP",
+        "INTJ",
+        "LST",
+        "UCP"
+      ]
+    },
+    "start": {
+      "type": "int32",
+      "example": 0
+    },
+    "end": {
+      "type": "int32",
+      "example": 2
+    }
+  },
+  "name": "Chunk"
+}

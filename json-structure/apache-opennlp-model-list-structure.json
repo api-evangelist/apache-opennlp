@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-structure/apache-opennlp-model-list-structure.json",
+  "description": "ModelList schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "models": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ModelInfo"
+      }
+    }
+  },
+  "name": "ModelList"
+}

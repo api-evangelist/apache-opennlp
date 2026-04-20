@@ -1,0 +1,107 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Apache OpenNLP"
+  description: "Vocabulary taxonomy for Apache OpenNLP natural language processing toolkit"
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: opennlp
+      version: "2.5.8"
+      baseUrl: "https://localhost:8080/opennlp"
+      status: active
+  resources:
+    - name: language-detection
+      api: opennlp
+      actions: [detect]
+    - name: sentences
+      api: opennlp
+      actions: [detect, split]
+    - name: tokens
+      api: opennlp
+      actions: [tokenize, position]
+    - name: named-entities
+      api: opennlp
+      actions: [find, classify]
+    - name: pos-tags
+      api: opennlp
+      actions: [tag, sequence]
+    - name: lemmas
+      api: opennlp
+      actions: [lemmatize]
+    - name: chunks
+      api: opennlp
+      actions: [chunk]
+    - name: parse-tree
+      api: opennlp
+      actions: [parse]
+    - name: categories
+      api: opennlp
+      actions: [categorize, classify]
+    - name: models
+      api: opennlp
+      actions: [list, get, load]
+  actions:
+    - name: detect
+      httpMethod: POST
+      pattern: read
+    - name: tokenize
+      httpMethod: POST
+      pattern: read
+    - name: find
+      httpMethod: POST
+      pattern: read
+    - name: tag
+      httpMethod: POST
+      pattern: read
+    - name: parse
+      httpMethod: POST
+      pattern: read
+    - name: list
+      httpMethod: GET
+      pattern: read
+  authentication:
+    schemes:
+      - type: apiKey
+        placement: header
+        description: "API key for service authentication"
+
+capability:
+  workflows:
+    - name: NLP Pipeline Workflow
+      file: capabilities/nlp-pipeline-workflow.yaml
+      description: "End-to-end NLP processing pipeline"
+      apis: [opennlp]
+      tools: 10
+      personas: [Data Scientist, NLP Engineer, Application Developer]
+  personas:
+    - id: data-scientist
+      name: Data Scientist
+      description: "Uses NLP pipeline for text analysis and feature extraction"
+    - id: nlp-engineer
+      name: NLP Engineer
+      description: "Integrates OpenNLP into custom NLP pipelines and applications"
+    - id: application-developer
+      name: Application Developer
+      description: "Uses OpenNLP APIs to add language processing capabilities to applications"
+  domains:
+    - Natural Language Processing
+    - Text Analysis
+    - Information Extraction
+    - Machine Learning
+
+crossReference:
+  - resource: named-entities
+    operations: [find, classify]
+    workflows: [NLP Pipeline Workflow]
+    personas: [Data Scientist, NLP Engineer]
+  - resource: pos-tags
+    operations: [tag]
+    workflows: [NLP Pipeline Workflow]
+    personas: [NLP Engineer]
+  - resource: tokens
+    operations: [tokenize]
+    workflows: [NLP Pipeline Workflow]
+    personas: [Application Developer, NLP Engineer]

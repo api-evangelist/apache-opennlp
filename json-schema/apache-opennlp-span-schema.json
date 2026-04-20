@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-schema/apache-opennlp-span-schema.json",
+  "title": "Span",
+  "description": "Span schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "start": {
+      "type": "integer",
+      "description": "Start character offset",
+      "example": 0
+    },
+    "end": {
+      "type": "integer",
+      "description": "End character offset (exclusive)",
+      "example": 13
+    },
+    "type": {
+      "type": "string",
+      "description": "Span type if applicable",
+      "example": "person"
+    }
+  }
+}

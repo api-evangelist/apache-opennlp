@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-schema/apache-opennlp-pos-tagging-result-schema.json",
+  "title": "POSTaggingResult",
+  "description": "POSTaggingResult schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "tokens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "Pierre",
+        "Vinken",
+        "will",
+        "join"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "POS tags (Penn Treebank tagset)",
+      "example": [
+        "NNP",
+        "NNP",
+        "MD",
+        "VB"
+      ]
+    },
+    "probabilities": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}

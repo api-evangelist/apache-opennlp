@@ -1,0 +1,122 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "nlp": "https://opennlp.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "TokensRequest": "nlp:TokensRequest",
+    "ModelList": "nlp:ModelList",
+    "SentenceDetectionResult": "nlp:SentenceDetectionResult",
+    "ChunkingResult": "nlp:ChunkingResult",
+    "NamedEntity": "nlp:NamedEntity",
+    "NERResult": "nlp:NERResult",
+    "POSTokensRequest": "nlp:POSTokensRequest",
+    "Span": "nlp:Span",
+    "LemmatizationResult": "nlp:LemmatizationResult",
+    "LanguageDetectionResult": "nlp:LanguageDetectionResult",
+    "Chunk": "nlp:Chunk",
+    "CategorizationResult": "nlp:CategorizationResult",
+    "TokenizationResult": "nlp:TokenizationResult",
+    "ModelInfo": "nlp:ModelInfo",
+    "POSTaggingResult": "nlp:POSTaggingResult",
+    "LanguageProbability": "nlp:LanguageProbability",
+    "ParseResult": "nlp:ParseResult",
+    "TextRequest": "nlp:TextRequest",
+    "tokens": {
+      "@id": "nlp:tokens",
+      "@container": "@set"
+    },
+    "language": {
+      "@id": "nlp:language",
+      "@type": "xsd:string"
+    },
+    "models": {
+      "@id": "nlp:models",
+      "@container": "@set"
+    },
+    "sentences": {
+      "@id": "nlp:sentences",
+      "@container": "@set"
+    },
+    "spans": {
+      "@id": "nlp:spans",
+      "@container": "@set"
+    },
+    "chunks": {
+      "@id": "nlp:chunks",
+      "@container": "@set"
+    },
+    "text": {
+      "@id": "nlp:text",
+      "@type": "schema:description"
+    },
+    "type": {
+      "@id": "nlp:type",
+      "@type": "xsd:string"
+    },
+    "start": {
+      "@id": "nlp:start",
+      "@type": "xsd:integer"
+    },
+    "end": {
+      "@id": "nlp:end",
+      "@type": "xsd:integer"
+    },
+    "probability": {
+      "@id": "nlp:probability",
+      "@type": "xsd:decimal"
+    },
+    "entities": {
+      "@id": "nlp:entities",
+      "@container": "@set"
+    },
+    "posTags": {
+      "@id": "nlp:posTags",
+      "@container": "@set"
+    },
+    "lemmas": {
+      "@id": "nlp:lemmas",
+      "@container": "@set"
+    },
+    "bestLanguage": {
+      "@id": "nlp:bestLanguage",
+      "@type": "xsd:string"
+    },
+    "confidence": {
+      "@id": "nlp:confidence",
+      "@type": "xsd:decimal"
+    },
+    "languages": {
+      "@id": "nlp:languages",
+      "@container": "@set"
+    },
+    "bestCategory": {
+      "@id": "nlp:bestCategory",
+      "@type": "xsd:string"
+    },
+    "probabilities": {
+      "@id": "nlp:probabilities",
+      "@type": "xsd:string"
+    },
+    "modelId": {
+      "@id": "nlp:modelId",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "nlp:version",
+      "@type": "xsd:string"
+    },
+    "loaded": {
+      "@id": "nlp:loaded",
+      "@type": "xsd:boolean"
+    },
+    "tags": {
+      "@id": "nlp:tags",
+      "@container": "@set"
+    },
+    "parseTree": {
+      "@id": "nlp:parseTree",
+      "@type": "xsd:string"
+    }
+  }
+}

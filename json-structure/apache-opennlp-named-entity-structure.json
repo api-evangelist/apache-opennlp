@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-structure/apache-opennlp-named-entity-structure.json",
+  "description": "NamedEntity schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Entity text",
+      "example": "Pierre Vinken"
+    },
+    "type": {
+      "type": "string",
+      "description": "Entity type",
+      "example": "person",
+      "enum": [
+        "person",
+        "location",
+        "organization",
+        "date",
+        "time",
+        "money",
+        "percent",
+        "misc"
+      ]
+    },
+    "start": {
+      "type": "int32",
+      "description": "Start token index",
+      "example": 0
+    },
+    "end": {
+      "type": "int32",
+      "description": "End token index (exclusive)",
+      "example": 2
+    },
+    "probability": {
+      "type": "double",
+      "description": "Confidence score",
+      "example": 0.95
+    }
+  },
+  "name": "NamedEntity"
+}

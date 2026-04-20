@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-schema/apache-opennlp-chunk-schema.json",
+  "title": "Chunk",
+  "description": "Chunk schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Chunk text",
+      "example": "Pierre Vinken"
+    },
+    "type": {
+      "type": "string",
+      "description": "Chunk type",
+      "example": "NP",
+      "enum": [
+        "NP",
+        "VP",
+        "PP",
+        "ADJP",
+        "ADVP",
+        "SBAR",
+        "PRT",
+        "CONJP",
+        "INTJ",
+        "LST",
+        "UCP"
+      ]
+    },
+    "start": {
+      "type": "integer",
+      "example": 0
+    },
+    "end": {
+      "type": "integer",
+      "example": 2
+    }
+  }
+}

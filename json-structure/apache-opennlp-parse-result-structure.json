@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/json-structure/apache-opennlp-parse-result-structure.json",
+  "description": "ParseResult schema from Apache OpenNLP",
+  "type": "object",
+  "properties": {
+    "parseTree": {
+      "type": "string",
+      "description": "Penn Treebank-style parse tree",
+      "example": "(S (NP Pierre Vinken) (VP will join (NP the board)))"
+    },
+    "probability": {
+      "type": "double",
+      "description": "Parse probability",
+      "example": 0.87
+    }
+  },
+  "name": "ParseResult"
+}
