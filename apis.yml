@@ -55,7 +55,7 @@ common:
   url: vocabulary/apache-opennlp-vocabulary.yaml
 - type: NaftikoCapability
   url: capabilities/nlp-pipeline-workflow.yaml
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/apache-opennlp-context.jsonld
 - type: Features
   data:
