@@ -1,8 +1,8 @@
 aid: apache-opennlp
 name: Apache OpenNLP
-description: >-
-  Apache OpenNLP is a machine learning based toolkit for the processing of natural language text. It supports common NLP tasks such as tokenization, sentence segmentation, part-of-speech tagging, named
-  entity extraction, chunking, parsing, and coreference resolution.
+description: Apache OpenNLP is a machine learning based toolkit for the processing of natural language text. It supports common
+  NLP tasks such as tokenization, sentence segmentation, part-of-speech tagging, named entity extraction, chunking, parsing,
+  and coreference resolution.
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -16,16 +16,14 @@ tags:
 - Open Source
 - Java
 created: '2026-03-16'
-modified: '2026-04-19'
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/apis.yml
+modified: '2026-05-19'
+url: https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
 - aid: apache-opennlp:apache-opennlp
   name: Apache OpenNLP
-  description: >-
-    OpenNLP provides a Java API for NLP tasks including tokenization, sentence detection, POS tagging, named entity recognition, chunking, parsing, and language detection, with support for training custom
-    models.
+  description: OpenNLP provides a Java API for NLP tasks including tokenization, sentence detection, POS tagging, named entity
+    recognition, chunking, parsing, and language detection, with support for training custom models.
   humanURL: https://opennlp.apache.org/docs/
   tags:
   - Java
@@ -39,6 +37,26 @@ apis:
     url: https://opennlp.apache.org/docs/
   - type: OpenAPI
     url: openapi/apache-opennlp-tools.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-chunking.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-document-categorization.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-language-detection.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-lemmatization.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-models.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-named-entity-recognition.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-pos-tagging.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-parsing.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-sentence-detection.yaml
+  - type: NaftikoCapability
+    url: capabilities/tools-tokenization.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
@@ -53,8 +71,6 @@ common:
   url: rules/apache-opennlp-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/apache-opennlp-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/nlp-pipeline-workflow.yaml
 - type: JSONLD
   url: json-ld/apache-opennlp-context.jsonld
 - type: Features

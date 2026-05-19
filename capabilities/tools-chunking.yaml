@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache OpenNLP Tools API — Chunking
+  description: 'Apache OpenNLP Tools API — Chunking. 1 operations. Lead operation: Apache OpenNLP Chunk Text. Self-contained
+    Naftiko capability covering one Apache Opennlp business surface.'
+  tags:
+  - Apache Opennlp
+  - Chunking
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_OPENNLP_API_KEY: APACHE_OPENNLP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: tools-chunking
+    baseUri: https://{host}/opennlp
+    description: Apache OpenNLP Tools API — Chunking business capability. Self-contained, no shared references.
+    resources:
+    - name: chunk
+      path: /chunk
+      operations:
+      - name: chunktext
+        method: POST
+        description: Apache OpenNLP Chunk Text
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: tools-chunking-rest
+    port: 8080
+    description: REST adapter for Apache OpenNLP Tools API — Chunking. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/chunk
+      name: chunk
+      description: REST surface for chunk.
+      operations:
+      - method: POST
+        name: chunktext
+        description: Apache OpenNLP Chunk Text
+        call: tools-chunking.chunktext
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: tools-chunking-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache OpenNLP Tools API — Chunking. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: apache-opennlp-chunk-text
+      description: Apache OpenNLP Chunk Text
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tools-chunking.chunktext
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

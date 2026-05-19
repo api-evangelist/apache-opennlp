@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache OpenNLP Tools API — Named Entity Recognition
+  description: 'Apache OpenNLP Tools API — Named Entity Recognition. 1 operations. Lead operation: Apache OpenNLP Find Named
+    Entities. Self-contained Naftiko capability covering one Apache Opennlp business surface.'
+  tags:
+  - Apache Opennlp
+  - Named Entity Recognition
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_OPENNLP_API_KEY: APACHE_OPENNLP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: tools-named-entity-recognition
+    baseUri: https://{host}/opennlp
+    description: Apache OpenNLP Tools API — Named Entity Recognition business capability. Self-contained, no shared references.
+    resources:
+    - name: ner
+      path: /ner
+      operations:
+      - name: findnamedentities
+        method: POST
+        description: Apache OpenNLP Find Named Entities
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: tools-named-entity-recognition-rest
+    port: 8080
+    description: REST adapter for Apache OpenNLP Tools API — Named Entity Recognition. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/ner
+      name: ner
+      description: REST surface for ner.
+      operations:
+      - method: POST
+        name: findnamedentities
+        description: Apache OpenNLP Find Named Entities
+        call: tools-named-entity-recognition.findnamedentities
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: tools-named-entity-recognition-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache OpenNLP Tools API — Named Entity Recognition. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: apache-opennlp-find-named-entities
+      description: Apache OpenNLP Find Named Entities
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: tools-named-entity-recognition.findnamedentities
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

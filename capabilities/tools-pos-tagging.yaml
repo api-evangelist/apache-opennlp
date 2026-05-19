@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache OpenNLP Tools API — POS Tagging
+  description: 'Apache OpenNLP Tools API — POS Tagging. 1 operations. Lead operation: Apache OpenNLP Tag Parts of Speech.
+    Self-contained Naftiko capability covering one Apache Opennlp business surface.'
+  tags:
+  - Apache Opennlp
+  - POS Tagging
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_OPENNLP_API_KEY: APACHE_OPENNLP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: tools-pos-tagging
+    baseUri: https://{host}/opennlp
+    description: Apache OpenNLP Tools API — POS Tagging business capability. Self-contained, no shared references.
+    resources:
+    - name: pos-tag
+      path: /pos/tag
+      operations:
+      - name: tagpartsofspeech
+        method: POST
+        description: Apache OpenNLP Tag Parts of Speech
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: tools-pos-tagging-rest
+    port: 8080
+    description: REST adapter for Apache OpenNLP Tools API — POS Tagging. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/pos/tag
+      name: pos-tag
+      description: REST surface for pos-tag.
+      operations:
+      - method: POST
+        name: tagpartsofspeech
+        description: Apache OpenNLP Tag Parts of Speech
+        call: tools-pos-tagging.tagpartsofspeech
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: tools-pos-tagging-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache OpenNLP Tools API — POS Tagging. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: apache-opennlp-tag-parts-speech
+      description: Apache OpenNLP Tag Parts of Speech
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: tools-pos-tagging.tagpartsofspeech
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
