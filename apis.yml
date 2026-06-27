@@ -37,25 +37,25 @@ apis:
     url: https://opennlp.apache.org/docs/
   - type: OpenAPI
     url: openapi/apache-opennlp-tools.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-chunking.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-document-categorization.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-language-detection.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-lemmatization.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-models.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-named-entity-recognition.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-pos-tagging.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-parsing.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-sentence-detection.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/tools-tokenization.yaml
 maintainers:
 - FN: Kin Lane
