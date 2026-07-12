@@ -61,6 +61,10 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-opennlp-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-opennlp-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/apache/opennlp
 - type: Documentation
@@ -119,3 +123,5 @@ common:
     description: Apache UIMA framework integration for unstructured information analysis
   - name: Maven/Gradle
     description: Available on Maven Central for Java build system integration
+- url: https://opennlp.apache.org/feed.xml
+  type: Blog
