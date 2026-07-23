@@ -1,0 +1,101 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools Chunking Tokenization API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+servers:
+- url: https://{host}/opennlp
+  description: Apache OpenNLP REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Tokenization
+paths:
+  /tokenize:
+    post:
+      operationId: tokenize
+      summary: Apache OpenNLP Tokenize Text
+      description: Segment input text into individual tokens (words, punctuation) using the tokenizer model.
+      tags:
+      - Tokenization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Tokenization result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenizationResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    TextRequest:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          type: string
+          description: Input text to process
+          example: Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.
+        language:
+          type: string
+          description: ISO-639-3 language code hint
+          example: eng
+        modelId:
+          type: string
+          description: Specific model to use (optional)
+          example: en-sent.bin
+    TokenizationResult:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Extracted tokens
+          example:
+          - Pierre
+          - Vinken
+          - ','
+          - '61'
+          - years
+          - old
+        spans:
+          type: array
+          items:
+            $ref: '#/components/schemas/Span'
+        probabilities:
+          type: array
+          items:
+            type: number
+          description: Confidence for each token boundary
+    Span:
+      type: object
+      properties:
+        start:
+          type: integer
+          description: Start character offset
+          example: 0
+        end:
+          type: integer
+          description: End character offset (exclusive)
+          example: 13
+        type:
+          type: string
+          description: Span type if applicable
+          example: person
+x-generated-from: documentation

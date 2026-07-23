@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools Chunking Document Categorization API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+servers:
+- url: https://{host}/opennlp
+  description: Apache OpenNLP REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Document Categorization
+paths:
+  /categorize:
+    post:
+      operationId: categorizeDocument
+      summary: Apache OpenNLP Categorize Document
+      description: Classify a document into predefined categories using the document categorizer model.
+      tags:
+      - Document Categorization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Document categorization result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategorizationResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    CategorizationResult:
+      type: object
+      properties:
+        bestCategory:
+          type: string
+          description: Most likely category label
+          example: Sports
+        probabilities:
+          type: object
+          additionalProperties:
+            type: number
+          description: Probability for each category
+    TextRequest:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          type: string
+          description: Input text to process
+          example: Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.
+        language:
+          type: string
+          description: ISO-639-3 language code hint
+          example: eng
+        modelId:
+          type: string
+          description: Specific model to use (optional)
+          example: en-sent.bin
+x-generated-from: documentation

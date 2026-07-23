@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools Chunking Sentence Detection API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+servers:
+- url: https://{host}/opennlp
+  description: Apache OpenNLP REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Sentence Detection
+paths:
+  /detect/sentences:
+    post:
+      operationId: detectSentences
+      summary: Apache OpenNLP Detect Sentences
+      description: Split input text into individual sentences using the sentence detector model.
+      tags:
+      - Sentence Detection
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Sentence detection result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentenceDetectionResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Span:
+      type: object
+      properties:
+        start:
+          type: integer
+          description: Start character offset
+          example: 0
+        end:
+          type: integer
+          description: End character offset (exclusive)
+          example: 13
+        type:
+          type: string
+          description: Span type if applicable
+          example: person
+    TextRequest:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          type: string
+          description: Input text to process
+          example: Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.
+        language:
+          type: string
+          description: ISO-639-3 language code hint
+          example: eng
+        modelId:
+          type: string
+          description: Specific model to use (optional)
+          example: en-sent.bin
+    SentenceDetectionResult:
+      type: object
+      properties:
+        sentences:
+          type: array
+          items:
+            type: string
+          description: Detected sentences
+          example:
+          - Pierre Vinken will join the board.
+          - He is 61 years old.
+        spans:
+          type: array
+          items:
+            $ref: '#/components/schemas/Span'
+x-generated-from: documentation

@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools Chunking Named Entity Recognition API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+servers:
+- url: https://{host}/opennlp
+  description: Apache OpenNLP REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Named Entity Recognition
+paths:
+  /ner:
+    post:
+      operationId: findNamedEntities
+      summary: Apache OpenNLP Find Named Entities
+      description: Detect and classify named entities (persons, locations, organizations, dates) in tokenized text.
+      tags:
+      - Named Entity Recognition
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokensRequest'
+      responses:
+        '200':
+          description: Named entity recognition result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NERResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    NamedEntity:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Entity text
+          example: Pierre Vinken
+        type:
+          type: string
+          description: Entity type
+          example: person
+          enum:
+          - person
+          - location
+          - organization
+          - date
+          - time
+          - money
+          - percent
+          - misc
+        start:
+          type: integer
+          description: Start token index
+          example: 0
+        end:
+          type: integer
+          description: End token index (exclusive)
+          example: 2
+        probability:
+          type: number
+          description: Confidence score
+          example: 0.95
+    NERResult:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/NamedEntity'
+    TokensRequest:
+      type: object
+      required:
+      - tokens
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example:
+          - Pierre
+          - Vinken
+          - will
+          - join
+          - the
+          - board
+        language:
+          type: string
+          description: ISO-639-3 language code
+          example: eng
+x-generated-from: documentation

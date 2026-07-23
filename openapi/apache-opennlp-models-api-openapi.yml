@@ -1,0 +1,110 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools Chunking Models API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+servers:
+- url: https://{host}/opennlp
+  description: Apache OpenNLP REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Models
+paths:
+  /models:
+    get:
+      operationId: listModels
+      summary: Apache OpenNLP List Available Models
+      description: List all available NLP models loaded in the OpenNLP service.
+      tags:
+      - Models
+      responses:
+        '200':
+          description: List of available models
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /models/{modelId}:
+    get:
+      operationId: getModel
+      summary: Apache OpenNLP Get Model
+      description: Get metadata about a specific NLP model.
+      tags:
+      - Models
+      parameters:
+      - name: modelId
+        in: path
+        required: true
+        description: Unique model identifier
+        schema:
+          type: string
+          example: en-ner-person.bin
+      responses:
+        '200':
+          description: Model metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelInfo'
+        '404':
+          description: Model not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    ModelInfo:
+      type: object
+      properties:
+        modelId:
+          type: string
+          description: Unique model identifier
+          example: en-ner-person.bin
+        language:
+          type: string
+          description: Model language
+          example: eng
+        type:
+          type: string
+          description: Model type
+          example: TokenNameFinder
+        version:
+          type: string
+          description: Model version
+          example: 1.5
+        loaded:
+          type: boolean
+          description: Whether model is currently loaded
+          example: true
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: Model not found
+        code:
+          type: integer
+          example: 404
+    ModelList:
+      type: object
+      properties:
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModelInfo'
+x-generated-from: documentation

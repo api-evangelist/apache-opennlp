@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools Chunking POS Tagging API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+servers:
+- url: https://{host}/opennlp
+  description: Apache OpenNLP REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: POS Tagging
+paths:
+  /pos/tag:
+    post:
+      operationId: tagPartsOfSpeech
+      summary: Apache OpenNLP Tag Parts of Speech
+      description: Assign POS tags (noun, verb, adjective, etc.) to each token in the tokenized text.
+      tags:
+      - POS Tagging
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokensRequest'
+      responses:
+        '200':
+          description: POS tagging result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/POSTaggingResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    TokensRequest:
+      type: object
+      required:
+      - tokens
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example:
+          - Pierre
+          - Vinken
+          - will
+          - join
+          - the
+          - board
+        language:
+          type: string
+          description: ISO-639-3 language code
+          example: eng
+    POSTaggingResult:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          example:
+          - Pierre
+          - Vinken
+          - will
+          - join
+        tags:
+          type: array
+          items:
+            type: string
+          description: POS tags (Penn Treebank tagset)
+          example:
+          - NNP
+          - NNP
+          - MD
+          - VB
+        probabilities:
+          type: array
+          items:
+            type: number
+x-generated-from: documentation

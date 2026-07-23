@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools Chunking API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+servers:
+- url: https://{host}/opennlp
+  description: Apache OpenNLP REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Chunking
+paths:
+  /chunk:
+    post:
+      operationId: chunkText
+      summary: Apache OpenNLP Chunk Text
+      description: Identify shallow syntactic phrases (noun phrases, verb phrases) in tokenized text with POS tags.
+      tags:
+      - Chunking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTokensRequest'
+      responses:
+        '200':
+          description: Chunking result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChunkingResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    ChunkingResult:
+      type: object
+      properties:
+        chunks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chunk'
+    Chunk:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Chunk text
+          example: Pierre Vinken
+        type:
+          type: string
+          description: Chunk type
+          example: NP
+          enum:
+          - NP
+          - VP
+          - PP
+          - ADJP
+          - ADVP
+          - SBAR
+          - PRT
+          - CONJP
+          - INTJ
+          - LST
+          - UCP
+        start:
+          type: integer
+          example: 0
+        end:
+          type: integer
+          example: 2
+    POSTokensRequest:
+      type: object
+      required:
+      - tokens
+      - posTags
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example:
+          - Pierre
+          - Vinken
+          - will
+          - join
+        posTags:
+          type: array
+          items:
+            type: string
+          description: POS tags for each token
+          example:
+          - NNP
+          - NNP
+          - MD
+          - VB
+x-generated-from: documentation

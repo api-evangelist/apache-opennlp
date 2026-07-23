@@ -1,0 +1,89 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools Chunking Language Detection API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+servers:
+- url: https://{host}/opennlp
+  description: Apache OpenNLP REST service
+  variables:
+    host:
+      default: localhost:8080
+tags:
+- name: Language Detection
+paths:
+  /detect/language:
+    post:
+      operationId: detectLanguage
+      summary: Apache OpenNLP Detect Language
+      description: Detect the language of the provided text using the language detector model.
+      tags:
+      - Language Detection
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Language detection result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LanguageDetectionResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    TextRequest:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          type: string
+          description: Input text to process
+          example: Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.
+        language:
+          type: string
+          description: ISO-639-3 language code hint
+          example: eng
+        modelId:
+          type: string
+          description: Specific model to use (optional)
+          example: en-sent.bin
+    LanguageProbability:
+      type: object
+      properties:
+        language:
+          type: string
+          description: ISO-639-3 language code
+          example: eng
+        probability:
+          type: number
+          description: Probability score
+          example: 0.98
+    LanguageDetectionResult:
+      type: object
+      properties:
+        bestLanguage:
+          type: string
+          description: ISO-639-3 code of most likely language
+          example: eng
+        confidence:
+          type: number
+          description: Confidence score 0-1
+          example: 0.98
+        languages:
+          type: array
+          description: All detected languages with probabilities
+          items:
+            $ref: '#/components/schemas/LanguageProbability'
+x-generated-from: documentation
