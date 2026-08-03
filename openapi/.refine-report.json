@@ -1,0 +1,32 @@
+{
+  "provider": "apache-opennlp",
+  "sources": [
+    "apache-opennlp-chunking-api-openapi.yml",
+    "apache-opennlp-document-categorization-api-openapi.yml",
+    "apache-opennlp-language-detection-api-openapi.yml",
+    "apache-opennlp-lemmatization-api-openapi.yml",
+    "apache-opennlp-models-api-openapi.yml",
+    "apache-opennlp-named-entity-recognition-api-openapi.yml",
+    "apache-opennlp-parsing-api-openapi.yml",
+    "apache-opennlp-pos-tagging-api-openapi.yml",
+    "apache-opennlp-sentence-detection-api-openapi.yml",
+    "apache-opennlp-tokenization-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-opennlp-chunking-api-openapi.yml",
+    "apache-opennlp-document-categorization-api-openapi.yml",
+    "apache-opennlp-language-detection-api-openapi.yml",
+    "apache-opennlp-lemmatization-api-openapi.yml",
+    "apache-opennlp-models-api-openapi.yml",
+    "apache-opennlp-named-entity-recognition-api-openapi.yml",
+    "apache-opennlp-parsing-api-openapi.yml",
+    "apache-opennlp-pos-tagging-api-openapi.yml",
+    "apache-opennlp-sentence-detection-api-openapi.yml",
+    "apache-opennlp-tokenization-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

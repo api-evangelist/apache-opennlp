@@ -1,0 +1,563 @@
+openapi: 3.0.3
+info:
+  title: Apache OpenNLP Tools API
+  description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
+  version: 2.5.8
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://opennlp.apache.org/
+x-generated-from: documentation
+servers:
+  - url: https://{host}/opennlp
+    description: Apache OpenNLP REST service
+    variables:
+      host:
+        default: localhost:8080
+
+paths:
+  /detect/language:
+    post:
+      operationId: detectLanguage
+      summary: Apache OpenNLP Detect Language
+      description: Detect the language of the provided text using the language detector model.
+      tags: [Language Detection]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Language detection result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LanguageDetectionResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /detect/sentences:
+    post:
+      operationId: detectSentences
+      summary: Apache OpenNLP Detect Sentences
+      description: Split input text into individual sentences using the sentence detector model.
+      tags: [Sentence Detection]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Sentence detection result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentenceDetectionResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /tokenize:
+    post:
+      operationId: tokenize
+      summary: Apache OpenNLP Tokenize Text
+      description: Segment input text into individual tokens (words, punctuation) using the tokenizer model.
+      tags: [Tokenization]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Tokenization result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenizationResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /ner:
+    post:
+      operationId: findNamedEntities
+      summary: Apache OpenNLP Find Named Entities
+      description: Detect and classify named entities (persons, locations, organizations, dates) in tokenized text.
+      tags: [Named Entity Recognition]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokensRequest'
+      responses:
+        '200':
+          description: Named entity recognition result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NERResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /pos/tag:
+    post:
+      operationId: tagPartsOfSpeech
+      summary: Apache OpenNLP Tag Parts of Speech
+      description: Assign POS tags (noun, verb, adjective, etc.) to each token in the tokenized text.
+      tags: [POS Tagging]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokensRequest'
+      responses:
+        '200':
+          description: POS tagging result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/POSTaggingResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /lemmatize:
+    post:
+      operationId: lemmatize
+      summary: Apache OpenNLP Lemmatize Text
+      description: Reduce tokens to their base/lemma forms using POS context.
+      tags: [Lemmatization]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTokensRequest'
+      responses:
+        '200':
+          description: Lemmatization result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LemmatizationResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /chunk:
+    post:
+      operationId: chunkText
+      summary: Apache OpenNLP Chunk Text
+      description: Identify shallow syntactic phrases (noun phrases, verb phrases) in tokenized text with POS tags.
+      tags: [Chunking]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTokensRequest'
+      responses:
+        '200':
+          description: Chunking result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChunkingResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /parse:
+    post:
+      operationId: parseText
+      summary: Apache OpenNLP Parse Text
+      description: Perform full syntactic parsing to build a parse tree for a sentence.
+      tags: [Parsing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Parse tree result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ParseResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /categorize:
+    post:
+      operationId: categorizeDocument
+      summary: Apache OpenNLP Categorize Document
+      description: Classify a document into predefined categories using the document categorizer model.
+      tags: [Document Categorization]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextRequest'
+      responses:
+        '200':
+          description: Document categorization result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategorizationResult'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /models:
+    get:
+      operationId: listModels
+      summary: Apache OpenNLP List Available Models
+      description: List all available NLP models loaded in the OpenNLP service.
+      tags: [Models]
+      responses:
+        '200':
+          description: List of available models
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+  /models/{modelId}:
+    get:
+      operationId: getModel
+      summary: Apache OpenNLP Get Model
+      description: Get metadata about a specific NLP model.
+      tags: [Models]
+      parameters:
+        - name: modelId
+          in: path
+          required: true
+          description: Unique model identifier
+          schema:
+            type: string
+            example: en-ner-person.bin
+      responses:
+        '200':
+          description: Model metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelInfo'
+        '404':
+          description: Model not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+
+components:
+  schemas:
+    TextRequest:
+      type: object
+      required: [text]
+      properties:
+        text:
+          type: string
+          description: Input text to process
+          example: Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.
+        language:
+          type: string
+          description: ISO-639-3 language code hint
+          example: eng
+        modelId:
+          type: string
+          description: Specific model to use (optional)
+          example: en-sent.bin
+
+    TokensRequest:
+      type: object
+      required: [tokens]
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example: ["Pierre", "Vinken", "will", "join", "the", "board"]
+        language:
+          type: string
+          description: ISO-639-3 language code
+          example: eng
+
+    POSTokensRequest:
+      type: object
+      required: [tokens, posTags]
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example: ["Pierre", "Vinken", "will", "join"]
+        posTags:
+          type: array
+          items:
+            type: string
+          description: POS tags for each token
+          example: ["NNP", "NNP", "MD", "VB"]
+
+    LanguageDetectionResult:
+      type: object
+      properties:
+        bestLanguage:
+          type: string
+          description: ISO-639-3 code of most likely language
+          example: eng
+        confidence:
+          type: number
+          description: Confidence score 0-1
+          example: 0.98
+        languages:
+          type: array
+          description: All detected languages with probabilities
+          items:
+            $ref: '#/components/schemas/LanguageProbability'
+
+    LanguageProbability:
+      type: object
+      properties:
+        language:
+          type: string
+          description: ISO-639-3 language code
+          example: eng
+        probability:
+          type: number
+          description: Probability score
+          example: 0.98
+
+    SentenceDetectionResult:
+      type: object
+      properties:
+        sentences:
+          type: array
+          items:
+            type: string
+          description: Detected sentences
+          example: ["Pierre Vinken will join the board.", "He is 61 years old."]
+        spans:
+          type: array
+          items:
+            $ref: '#/components/schemas/Span'
+
+    TokenizationResult:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Extracted tokens
+          example: ["Pierre", "Vinken", ",", "61", "years", "old"]
+        spans:
+          type: array
+          items:
+            $ref: '#/components/schemas/Span'
+        probabilities:
+          type: array
+          items:
+            type: number
+          description: Confidence for each token boundary
+
+    NERResult:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/NamedEntity'
+
+    NamedEntity:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Entity text
+          example: Pierre Vinken
+        type:
+          type: string
+          description: Entity type
+          example: person
+          enum: [person, location, organization, date, time, money, percent, misc]
+        start:
+          type: integer
+          description: Start token index
+          example: 0
+        end:
+          type: integer
+          description: End token index (exclusive)
+          example: 2
+        probability:
+          type: number
+          description: Confidence score
+          example: 0.95
+
+    POSTaggingResult:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          example: ["Pierre", "Vinken", "will", "join"]
+        tags:
+          type: array
+          items:
+            type: string
+          description: POS tags (Penn Treebank tagset)
+          example: ["NNP", "NNP", "MD", "VB"]
+        probabilities:
+          type: array
+          items:
+            type: number
+
+    LemmatizationResult:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          example: ["running", "faster"]
+        lemmas:
+          type: array
+          items:
+            type: string
+          example: ["run", "fast"]
+
+    ChunkingResult:
+      type: object
+      properties:
+        chunks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chunk'
+
+    Chunk:
+      type: object
+      properties:
+        text:
+          type: string
+          description: Chunk text
+          example: Pierre Vinken
+        type:
+          type: string
+          description: Chunk type
+          example: NP
+          enum: [NP, VP, PP, ADJP, ADVP, SBAR, PRT, CONJP, INTJ, LST, UCP]
+        start:
+          type: integer
+          example: 0
+        end:
+          type: integer
+          example: 2
+
+    ParseResult:
+      type: object
+      properties:
+        parseTree:
+          type: string
+          description: Penn Treebank-style parse tree
+          example: "(S (NP Pierre Vinken) (VP will join (NP the board)))"
+        probability:
+          type: number
+          description: Parse probability
+          example: 0.87
+
+    CategorizationResult:
+      type: object
+      properties:
+        bestCategory:
+          type: string
+          description: Most likely category label
+          example: Sports
+        probabilities:
+          type: object
+          additionalProperties:
+            type: number
+          description: Probability for each category
+
+    ModelList:
+      type: object
+      properties:
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModelInfo'
+
+    ModelInfo:
+      type: object
+      properties:
+        modelId:
+          type: string
+          description: Unique model identifier
+          example: en-ner-person.bin
+        language:
+          type: string
+          description: Model language
+          example: eng
+        type:
+          type: string
+          description: Model type
+          example: TokenNameFinder
+        version:
+          type: string
+          description: Model version
+          example: 1.5
+        loaded:
+          type: boolean
+          description: Whether model is currently loaded
+          example: true
+
+    Span:
+      type: object
+      properties:
+        start:
+          type: integer
+          description: Start character offset
+          example: 0
+        end:
+          type: integer
+          description: End character offset (exclusive)
+          example: 13
+        type:
+          type: string
+          description: Span type if applicable
+          example: person
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: Model not found
+        code:
+          type: integer
+          example: 404
