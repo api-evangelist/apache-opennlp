@@ -43,26 +43,6 @@ apis:
     url: openapi/apache-opennlp-chunking-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-document-categorization-api
   name: Apache OpenNLP Document Categorization API
   description: >-
@@ -75,26 +55,6 @@ apis:
     url: openapi/apache-opennlp-document-categorization-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-language-detection-api
   name: Apache OpenNLP Language Detection API
   description: The Language Detection API from Apache OpenNLP — 1 operation(s) for language detection.
@@ -106,26 +66,6 @@ apis:
     url: openapi/apache-opennlp-language-detection-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-lemmatization-api
   name: Apache OpenNLP Lemmatization API
   description: The Lemmatization API from Apache OpenNLP — 1 operation(s) for lemmatization.
@@ -137,26 +77,6 @@ apis:
     url: openapi/apache-opennlp-lemmatization-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-models-api
   name: Apache OpenNLP Models API
   description: The Models API from Apache OpenNLP — 2 operation(s) for models.
@@ -168,26 +88,6 @@ apis:
     url: openapi/apache-opennlp-models-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-named-entity-recognition-api
   name: Apache OpenNLP Named Entity Recognition API
   description: >-
@@ -200,26 +100,6 @@ apis:
     url: openapi/apache-opennlp-named-entity-recognition-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-parsing-api
   name: Apache OpenNLP Parsing API
   description: The Parsing API from Apache OpenNLP — 1 operation(s) for parsing.
@@ -231,26 +111,6 @@ apis:
     url: openapi/apache-opennlp-parsing-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-pos-tagging-api
   name: Apache OpenNLP POS Tagging API
   description: The POS Tagging API from Apache OpenNLP — 1 operation(s) for pos tagging.
@@ -262,26 +122,6 @@ apis:
     url: openapi/apache-opennlp-pos-tagging-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-sentence-detection-api
   name: Apache OpenNLP Sentence Detection API
   description: The Sentence Detection API from Apache OpenNLP — 1 operation(s) for sentence detection.
@@ -293,26 +133,6 @@ apis:
     url: openapi/apache-opennlp-sentence-detection-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 - aid: apache-opennlp:apache-opennlp-tokenization-api
   name: Apache OpenNLP Tokenization API
   description: The Tokenization API from Apache OpenNLP — 1 operation(s) for tokenization.
@@ -324,26 +144,6 @@ apis:
     url: openapi/apache-opennlp-tokenization-api-openapi.yml
   - type: Documentation
     url: https://opennlp.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/tools-chunking.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-document-categorization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-language-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-lemmatization.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-models.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-named-entity-recognition.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-pos-tagging.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-parsing.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-sentence-detection.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/tools-tokenization.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
