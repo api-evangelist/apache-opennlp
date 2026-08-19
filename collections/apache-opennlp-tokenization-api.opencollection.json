@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache OpenNLP Tools Chunking Tokenization API",
+    "version": "2.5.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tokenization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache OpenNLP Tokenize Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/opennlp/tokenize",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Segment input text into individual tokens (words, punctuation) using the tokenizer model."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

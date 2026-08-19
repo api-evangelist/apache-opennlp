@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache OpenNLP Tools Chunking POS Tagging API",
+    "version": "2.5.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "POS Tagging",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache OpenNLP Tag Parts of Speech",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/opennlp/pos/tag",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Assign POS tags (noun, verb, adjective, etc.) to each token in the tokenized text."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

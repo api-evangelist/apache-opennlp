@@ -1,0 +1,290 @@
+{
+  "item": [
+    {
+      "id": "b8d446f0-d887-4308-88b1-b1707d18ee96",
+      "name": "Models",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "818a8a58-9578-42c5-90b8-3321ba0e36e8",
+          "name": "Apache OpenNLP List Available Models",
+          "request": {
+            "name": "Apache OpenNLP List Available Models",
+            "description": {
+              "content": "List all available NLP models loaded in the OpenNLP service.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "models"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2fdeee2d-7289-47af-be84-0b70db71b14b",
+              "name": "List of available models",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"models\": [\n    {\n      \"modelId\": \"en-ner-person.bin\",\n      \"language\": \"eng\",\n      \"type\": \"TokenNameFinder\",\n      \"version\": \"string\",\n      \"loaded\": true\n    },\n    {\n      \"modelId\": \"en-ner-person.bin\",\n      \"language\": \"eng\",\n      \"type\": \"TokenNameFinder\",\n      \"version\": \"string\",\n      \"loaded\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b18ba9e-afe6-448e-9443-769967fd6691",
+          "name": "Apache OpenNLP Get Model",
+          "request": {
+            "name": "Apache OpenNLP Get Model",
+            "description": {
+              "content": "Get metadata about a specific NLP model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "models",
+                ":modelId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "modelId",
+                  "description": "(Required) Unique model identifier"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6751c8de-e6c1-4500-ac36-f2ab5907b543",
+              "name": "Model metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models",
+                    ":modelId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "modelId",
+                      "description": "(Required) Unique model identifier"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"modelId\": \"en-ner-person.bin\",\n  \"language\": \"eng\",\n  \"type\": \"TokenNameFinder\",\n  \"version\": \"string\",\n  \"loaded\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5799cade-8b31-42f2-a3a3-ff1c87199870",
+              "name": "Model not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "models",
+                    ":modelId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "modelId",
+                      "description": "(Required) Unique model identifier"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Model not found\",\n  \"code\": 404\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/opennlp",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1f208a4c-2514-4d7f-bfde-e224e06e27b8",
+    "name": "Apache OpenNLP Tools Chunking Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.",
+      "type": "text/plain"
+    }
+  }
+}

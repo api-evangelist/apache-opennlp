@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache OpenNLP Tools Chunking API",
+    "version": "2.5.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Chunking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache OpenNLP Chunk Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/opennlp/chunk",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Identify shallow syntactic phrases (noun phrases, verb phrases) in tokenized text with POS tags."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

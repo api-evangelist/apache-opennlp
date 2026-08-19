@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache OpenNLP Tools Chunking Language Detection API",
+    "version": "2.5.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Language Detection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache OpenNLP Detect Language",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/opennlp/detect/language",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Detect the language of the provided text using the language detector model."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

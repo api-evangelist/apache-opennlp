@@ -1,0 +1,152 @@
+{
+  "item": [
+    {
+      "id": "923797e4-0103-43b0-8372-b52aa5b3c4ba",
+      "name": "Parsing",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "22ec1e6b-c4ad-4a74-8220-51bd39a6b874",
+          "name": "Apache OpenNLP Parse Text",
+          "request": {
+            "name": "Apache OpenNLP Parse Text",
+            "description": {
+              "content": "Perform full syntactic parsing to build a parse tree for a sentence.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "parse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"language\": \"<string>\",\n  \"modelId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "154e0d5c-9957-490f-ad62-fec646018ced",
+              "name": "Parse tree result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "parse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.\",\n  \"language\": \"eng\",\n  \"modelId\": \"en-sent.bin\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"parseTree\": \"(S (NP Pierre Vinken) (VP will join (NP the board)))\",\n  \"probability\": 0.87\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/opennlp",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b1c25f25-9b43-427e-aa9a-3e8a73df7800",
+    "name": "Apache OpenNLP Tools Chunking Parsing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.",
+      "type": "text/plain"
+    }
+  }
+}

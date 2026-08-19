@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache OpenNLP Tools Chunking Named Entity Recognition API",
+    "version": "2.5.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Named Entity Recognition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache OpenNLP Find Named Entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/opennlp/ner",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Detect and classify named entities (persons, locations, organizations, dates) in tokenized text."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

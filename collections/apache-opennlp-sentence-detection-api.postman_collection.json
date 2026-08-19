@@ -1,0 +1,154 @@
+{
+  "item": [
+    {
+      "id": "cfeb1a1f-ae3f-4073-8457-6b498d85346b",
+      "name": "Sentence Detection",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "755e1ef1-6a7e-49a7-a538-655fb0986226",
+          "name": "Apache OpenNLP Detect Sentences",
+          "request": {
+            "name": "Apache OpenNLP Detect Sentences",
+            "description": {
+              "content": "Split input text into individual sentences using the sentence detector model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "detect",
+                "sentences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"<string>\",\n  \"language\": \"<string>\",\n  \"modelId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5c7a9f09-b452-4612-963e-dcc177ce9b76",
+              "name": "Sentence detection result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "detect",
+                    "sentences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.\",\n  \"language\": \"eng\",\n  \"modelId\": \"en-sent.bin\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sentences\": [\n    \"Pierre Vinken will join the board.\",\n    \"He is 61 years old.\"\n  ],\n  \"spans\": [\n    {\n      \"start\": 0,\n      \"end\": 13,\n      \"type\": \"person\"\n    },\n    {\n      \"start\": 0,\n      \"end\": 13,\n      \"type\": \"person\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/opennlp",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "479c6780-8ba1-49dc-be63-a2d81524c612",
+    "name": "Apache OpenNLP Tools Chunking Sentence Detection API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.",
+      "type": "text/plain"
+    }
+  }
+}

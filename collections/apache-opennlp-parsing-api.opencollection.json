@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache OpenNLP Tools Chunking Parsing API",
+    "version": "2.5.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Parsing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache OpenNLP Parse Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/opennlp/parse",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Perform full syntactic parsing to build a parse tree for a sentence."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

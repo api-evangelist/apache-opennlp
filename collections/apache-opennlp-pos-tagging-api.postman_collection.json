@@ -1,0 +1,154 @@
+{
+  "item": [
+    {
+      "id": "cde8a7eb-1407-4774-9c23-8107d417118b",
+      "name": "POS Tagging",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c7df7937-5026-425f-9ef5-89b3f85d202a",
+          "name": "Apache OpenNLP Tag Parts of Speech",
+          "request": {
+            "name": "Apache OpenNLP Tag Parts of Speech",
+            "description": {
+              "content": "Assign POS tags (noun, verb, adjective, etc.) to each token in the tokenized text.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pos",
+                "tag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tokens\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"language\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "60819738-898e-46c8-b71a-64cb0dc1eeb8",
+              "name": "POS tagging result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pos",
+                    "tag"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tokens\": [\n    \"Pierre\",\n    \"Vinken\",\n    \"will\",\n    \"join\",\n    \"the\",\n    \"board\"\n  ],\n  \"language\": \"eng\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tokens\": [\n    \"Pierre\",\n    \"Vinken\",\n    \"will\",\n    \"join\"\n  ],\n  \"tags\": [\n    \"NNP\",\n    \"NNP\",\n    \"MD\",\n    \"VB\"\n  ],\n  \"probabilities\": [\n    8869.706636905323,\n    6431.042821157097\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/opennlp",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6834d089-ed1c-47ef-b6ae-578b1701ad0b",
+    "name": "Apache OpenNLP Tools Chunking POS Tagging API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.",
+      "type": "text/plain"
+    }
+  }
+}

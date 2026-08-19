@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache OpenNLP Tools Chunking Models API",
+    "version": "2.5.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache OpenNLP List Available Models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/opennlp/models"
+          },
+          "docs": "List all available NLP models loaded in the OpenNLP service."
+        },
+        {
+          "info": {
+            "name": "Apache OpenNLP Get Model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/opennlp/models/:modelId",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "Unique model identifier"
+              }
+            ]
+          },
+          "docs": "Get metadata about a specific NLP model."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
