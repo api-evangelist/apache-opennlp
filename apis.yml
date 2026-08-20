@@ -20,6 +20,14 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-opennlp.png
 tags:
+- Machine-Learning
+- Natural Language Processing
+- NLP
+- Text Processing
+- Apache
+- Open-Source
+- Java
+tags_raw:
 - Machine Learning
 - Natural Language Processing
 - NLP
