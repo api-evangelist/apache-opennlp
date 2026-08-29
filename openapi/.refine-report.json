@@ -27,6 +27,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "apache-opennlp-chunking-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-document-categorization-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-language-detection-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-lemmatization-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-models-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-named-entity-recognition-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-parsing-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-pos-tagging-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-sentence-detection-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-tokenization-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

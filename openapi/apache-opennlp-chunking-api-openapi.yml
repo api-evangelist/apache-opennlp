@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache OpenNLP Tools Chunking API
   description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
@@ -49,6 +49,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Chunk'
+    POSTokensRequest:
+      type: object
+      required:
+      - tokens
+      - posTags
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example:
+          - Pierre
+          - Vinken
+          - will
+          - join
+        posTags:
+          type: array
+          items:
+            type: string
+          description: POS tags for each token
+          example:
+          - NNP
+          - NNP
+          - MD
+          - VB
     Chunk:
       type: object
       properties:
@@ -78,30 +104,4 @@ components:
         end:
           type: integer
           example: 2
-    POSTokensRequest:
-      type: object
-      required:
-      - tokens
-      - posTags
-      properties:
-        tokens:
-          type: array
-          items:
-            type: string
-          description: Pre-tokenized array of text tokens
-          example:
-          - Pierre
-          - Vinken
-          - will
-          - join
-        posTags:
-          type: array
-          items:
-            type: string
-          description: POS tags for each token
-          example:
-          - NNP
-          - NNP
-          - MD
-          - VB
 x-generated-from: documentation

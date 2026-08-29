@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache OpenNLP Tools Chunking Language Detection API
   description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
@@ -42,23 +42,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    TextRequest:
-      type: object
-      required:
-      - text
-      properties:
-        text:
-          type: string
-          description: Input text to process
-          example: Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.
-        language:
-          type: string
-          description: ISO-639-3 language code hint
-          example: eng
-        modelId:
-          type: string
-          description: Specific model to use (optional)
-          example: en-sent.bin
     LanguageProbability:
       type: object
       properties:
@@ -86,4 +69,21 @@ components:
           description: All detected languages with probabilities
           items:
             $ref: '#/components/schemas/LanguageProbability'
+    TextRequest:
+      type: object
+      required:
+      - text
+      properties:
+        text:
+          type: string
+          description: Input text to process
+          example: Pierre Vinken, 61 years old, will join the board as a nonexecutive director Nov. 29.
+        language:
+          type: string
+          description: ISO-639-3 language code hint
+          example: eng
+        modelId:
+          type: string
+          description: Specific model to use (optional)
+          example: en-sent.bin
 x-generated-from: documentation

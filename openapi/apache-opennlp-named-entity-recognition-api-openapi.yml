@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache OpenNLP Tools Chunking Named Entity Recognition API
   description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
@@ -42,6 +42,34 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    NERResult:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/NamedEntity'
+    TokensRequest:
+      type: object
+      required:
+      - tokens
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example:
+          - Pierre
+          - Vinken
+          - will
+          - join
+          - the
+          - board
+        language:
+          type: string
+          description: ISO-639-3 language code
+          example: eng
     NamedEntity:
       type: object
       properties:
@@ -74,32 +102,4 @@ components:
           type: number
           description: Confidence score
           example: 0.95
-    NERResult:
-      type: object
-      properties:
-        entities:
-          type: array
-          items:
-            $ref: '#/components/schemas/NamedEntity'
-    TokensRequest:
-      type: object
-      required:
-      - tokens
-      properties:
-        tokens:
-          type: array
-          items:
-            type: string
-          description: Pre-tokenized array of text tokens
-          example:
-          - Pierre
-          - Vinken
-          - will
-          - join
-          - the
-          - board
-        language:
-          type: string
-          description: ISO-639-3 language code
-          example: eng
 x-generated-from: documentation

@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache OpenNLP Tools Chunking Tokenization API
   description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
@@ -59,6 +59,21 @@ components:
           type: string
           description: Specific model to use (optional)
           example: en-sent.bin
+    Span:
+      type: object
+      properties:
+        start:
+          type: integer
+          description: Start character offset
+          example: 0
+        end:
+          type: integer
+          description: End character offset (exclusive)
+          example: 13
+        type:
+          type: string
+          description: Span type if applicable
+          example: person
     TokenizationResult:
       type: object
       properties:
@@ -83,19 +98,4 @@ components:
           items:
             type: number
           description: Confidence for each token boundary
-    Span:
-      type: object
-      properties:
-        start:
-          type: integer
-          description: Start character offset
-          example: 0
-        end:
-          type: integer
-          description: End character offset (exclusive)
-          example: 13
-        type:
-          type: string
-          description: Span type if applicable
-          example: person
 x-generated-from: documentation
