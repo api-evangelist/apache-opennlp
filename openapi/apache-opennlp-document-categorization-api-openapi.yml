@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apache OpenNLP Tools Chunking Document Categorization API
+  title: Apache OpenNLP Tools Document Categorization API
   description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
   version: 2.5.8
   license:
@@ -42,6 +42,18 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    CategorizationResult:
+      type: object
+      properties:
+        bestCategory:
+          type: string
+          description: Most likely category label
+          example: Sports
+        probabilities:
+          type: object
+          additionalProperties:
+            type: number
+          description: Probability for each category
     TextRequest:
       type: object
       required:
@@ -59,16 +71,4 @@ components:
           type: string
           description: Specific model to use (optional)
           example: en-sent.bin
-    CategorizationResult:
-      type: object
-      properties:
-        bestCategory:
-          type: string
-          description: Most likely category label
-          example: Sports
-        probabilities:
-          type: object
-          additionalProperties:
-            type: number
-          description: Probability for each category
 x-generated-from: documentation

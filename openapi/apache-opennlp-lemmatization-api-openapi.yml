@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apache OpenNLP Tools Chunking Lemmatization API
+  title: Apache OpenNLP Tools Lemmatization API
   description: Apache OpenNLP is a machine learning based toolkit for processing natural language text, supporting tokenization, sentence segmentation, POS tagging, named entity extraction, chunking, parsing, and coreference resolution. This API represents the REST-accessible surface of the OpenNLP toolkit.
   version: 2.5.8
   license:
@@ -42,23 +42,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    LemmatizationResult:
-      type: object
-      properties:
-        tokens:
-          type: array
-          items:
-            type: string
-          example:
-          - running
-          - faster
-        lemmas:
-          type: array
-          items:
-            type: string
-          example:
-          - run
-          - fast
     POSTokensRequest:
       type: object
       required:
@@ -85,4 +68,21 @@ components:
           - NNP
           - MD
           - VB
+    LemmatizationResult:
+      type: object
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          example:
+          - running
+          - faster
+        lemmas:
+          type: array
+          items:
+            type: string
+          example:
+          - run
+          - fast
 x-generated-from: documentation

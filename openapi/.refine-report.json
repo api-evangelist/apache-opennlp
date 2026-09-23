@@ -1,16 +1,7 @@
 {
   "provider": "apache-opennlp",
   "sources": [
-    "apache-opennlp-chunking-api-openapi.yml",
-    "apache-opennlp-document-categorization-api-openapi.yml",
-    "apache-opennlp-language-detection-api-openapi.yml",
-    "apache-opennlp-lemmatization-api-openapi.yml",
-    "apache-opennlp-models-api-openapi.yml",
-    "apache-opennlp-named-entity-recognition-api-openapi.yml",
-    "apache-opennlp-parsing-api-openapi.yml",
-    "apache-opennlp-pos-tagging-api-openapi.yml",
-    "apache-opennlp-sentence-detection-api-openapi.yml",
-    "apache-opennlp-tokenization-api-openapi.yml"
+    "_ae-authored/apache-opennlp-tools.yaml"
   ],
   "outputs": [
     "apache-opennlp-chunking-api-openapi.yml",
@@ -19,8 +10,8 @@
     "apache-opennlp-lemmatization-api-openapi.yml",
     "apache-opennlp-models-api-openapi.yml",
     "apache-opennlp-named-entity-recognition-api-openapi.yml",
-    "apache-opennlp-parsing-api-openapi.yml",
     "apache-opennlp-pos-tagging-api-openapi.yml",
+    "apache-opennlp-parsing-api-openapi.yml",
     "apache-opennlp-sentence-detection-api-openapi.yml",
     "apache-opennlp-tokenization-api-openapi.yml"
   ],
@@ -28,17 +19,30 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "apache-opennlp-chunking-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-document-categorization-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-language-detection-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-lemmatization-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-models-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-named-entity-recognition-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-parsing-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-pos-tagging-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-sentence-detection-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-opennlp-tokenization-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-opennlp-tools.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-opennlp-tools.yaml: declared missing tag: Chunking",
+    "apache-opennlp-tools.yaml: declared missing tag: Document Categorization",
+    "apache-opennlp-tools.yaml: declared missing tag: Language Detection",
+    "apache-opennlp-tools.yaml: declared missing tag: Lemmatization",
+    "apache-opennlp-tools.yaml: declared missing tag: Models",
+    "apache-opennlp-tools.yaml: declared missing tag: Named Entity Recognition",
+    "apache-opennlp-tools.yaml: declared missing tag: POS Tagging",
+    "apache-opennlp-tools.yaml: declared missing tag: Parsing",
+    "apache-opennlp-tools.yaml: declared missing tag: Sentence Detection",
+    "apache-opennlp-tools.yaml: declared missing tag: Tokenization",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "apache-opennlp-chunking-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-document-categorization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-language-detection-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-lemmatization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-named-entity-recognition-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-parsing-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-pos-tagging-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-sentence-detection-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-opennlp-tokenization-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -42,13 +42,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    ChunkingResult:
-      type: object
-      properties:
-        chunks:
-          type: array
-          items:
-            $ref: '#/components/schemas/Chunk'
     POSTokensRequest:
       type: object
       required:
@@ -75,6 +68,13 @@ components:
           - NNP
           - MD
           - VB
+    ChunkingResult:
+      type: object
+      properties:
+        chunks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chunk'
     Chunk:
       type: object
       properties:
