@@ -31,12 +31,12 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-opennlp.png
 tags:
-- Machine-Learning
+- Machine Learning
 - Natural Language Processing
 - NLP
 - Text Processing
 - Apache
-- Open-Source
+- Open Source
 - Java
 tags_raw:
 - Machine Learning
@@ -46,6 +46,8 @@ tags_raw:
 - Apache
 - Open Source
 - Java
+- Machine-Learning
+- Open-Source
 created: '2026-03-16'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/apis.yml

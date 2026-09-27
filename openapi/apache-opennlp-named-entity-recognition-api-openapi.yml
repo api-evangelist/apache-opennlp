@@ -42,34 +42,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    NERResult:
-      type: object
-      properties:
-        entities:
-          type: array
-          items:
-            $ref: '#/components/schemas/NamedEntity'
-    TokensRequest:
-      type: object
-      required:
-      - tokens
-      properties:
-        tokens:
-          type: array
-          items:
-            type: string
-          description: Pre-tokenized array of text tokens
-          example:
-          - Pierre
-          - Vinken
-          - will
-          - join
-          - the
-          - board
-        language:
-          type: string
-          description: ISO-639-3 language code
-          example: eng
     NamedEntity:
       type: object
       properties:
@@ -102,4 +74,32 @@ components:
           type: number
           description: Confidence score
           example: 0.95
+    NERResult:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/NamedEntity'
+    TokensRequest:
+      type: object
+      required:
+      - tokens
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example:
+          - Pierre
+          - Vinken
+          - will
+          - join
+          - the
+          - board
+        language:
+          type: string
+          description: ISO-639-3 language code
+          example: eng
 x-generated-from: documentation

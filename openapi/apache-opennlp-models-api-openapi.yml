@@ -90,6 +90,13 @@ components:
           type: boolean
           description: Whether model is currently loaded
           example: true
+    ModelList:
+      type: object
+      properties:
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModelInfo'
     ErrorResponse:
       type: object
       properties:
@@ -100,11 +107,4 @@ components:
         code:
           type: integer
           example: 404
-    ModelList:
-      type: object
-      properties:
-        models:
-          type: array
-          items:
-            $ref: '#/components/schemas/ModelInfo'
 x-generated-from: documentation

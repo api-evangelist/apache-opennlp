@@ -42,6 +42,21 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Span:
+      type: object
+      properties:
+        start:
+          type: integer
+          description: Start character offset
+          example: 0
+        end:
+          type: integer
+          description: End character offset (exclusive)
+          example: 13
+        type:
+          type: string
+          description: Span type if applicable
+          example: person
     SentenceDetectionResult:
       type: object
       properties:
@@ -74,19 +89,4 @@ components:
           type: string
           description: Specific model to use (optional)
           example: en-sent.bin
-    Span:
-      type: object
-      properties:
-        start:
-          type: integer
-          description: Start character offset
-          example: 0
-        end:
-          type: integer
-          description: End character offset (exclusive)
-          example: 13
-        type:
-          type: string
-          description: Span type if applicable
-          example: person
 x-generated-from: documentation
