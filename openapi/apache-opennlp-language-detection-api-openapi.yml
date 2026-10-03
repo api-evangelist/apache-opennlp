@@ -42,17 +42,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    LanguageProbability:
-      type: object
-      properties:
-        language:
-          type: string
-          description: ISO-639-3 language code
-          example: eng
-        probability:
-          type: number
-          description: Probability score
-          example: 0.98
     LanguageDetectionResult:
       type: object
       properties:
@@ -69,6 +58,17 @@ components:
           description: All detected languages with probabilities
           items:
             $ref: '#/components/schemas/LanguageProbability'
+    LanguageProbability:
+      type: object
+      properties:
+        language:
+          type: string
+          description: ISO-639-3 language code
+          example: eng
+        probability:
+          type: number
+          description: Probability score
+          example: 0.98
     TextRequest:
       type: object
       required:

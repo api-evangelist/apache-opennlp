@@ -49,6 +49,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Chunk'
+    POSTokensRequest:
+      type: object
+      required:
+      - tokens
+      - posTags
+      properties:
+        tokens:
+          type: array
+          items:
+            type: string
+          description: Pre-tokenized array of text tokens
+          example:
+          - Pierre
+          - Vinken
+          - will
+          - join
+        posTags:
+          type: array
+          items:
+            type: string
+          description: POS tags for each token
+          example:
+          - NNP
+          - NNP
+          - MD
+          - VB
     Chunk:
       type: object
       properties:
@@ -78,30 +104,4 @@ components:
         end:
           type: integer
           example: 2
-    POSTokensRequest:
-      type: object
-      required:
-      - tokens
-      - posTags
-      properties:
-        tokens:
-          type: array
-          items:
-            type: string
-          description: Pre-tokenized array of text tokens
-          example:
-          - Pierre
-          - Vinken
-          - will
-          - join
-        posTags:
-          type: array
-          items:
-            type: string
-          description: POS tags for each token
-          example:
-          - NNP
-          - NNP
-          - MD
-          - VB
 x-generated-from: documentation
