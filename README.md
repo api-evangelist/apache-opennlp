@@ -1,4 +1,4 @@
-# Apache OpenNLP (apache-opennlp)
+# Apache OpenNLP
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,136 +66,222 @@
 
 Apache OpenNLP is a machine learning based toolkit for the processing of natural language text. It supports common NLP tasks such as tokenization, sentence segmentation, part-of-speech tagging, named entity extraction, chunking, parsing, and coreference resolution.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-opennlp/refs/heads/main/apis.yml)
+**Areas:** Machine Learning · Natural Language Processing · Text Processing · Apache · Open Source · Java
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache OpenNLP on APIs.io
 
-## Tags:
+Everything profiled for Apache OpenNLP is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-opennlp/](https://apis.io/providers/apache-opennlp/)** — or go straight to one of the APIs or properties below.
 
- - Machine Learning, Natural Language Processing, NLP, Text Processing, Apache, Open Source, Java
+### APIs (10)
 
-## Timestamps
+- [Apache OpenNLP Chunking API](https://apis.io/apis/apache-opennlp/apache-opennlp-chunking-api/) — The Chunking API from Apache OpenNLP — 1 operation(s) for chunking.
+- [Apache OpenNLP Document Categorization API](https://apis.io/apis/apache-opennlp/apache-opennlp-document-categorization-api/) — The Document Categorization API from Apache OpenNLP — 1 operation(s) for document categorization.
+- [Apache OpenNLP Language Detection API](https://apis.io/apis/apache-opennlp/apache-opennlp-language-detection-api/) — The Language Detection API from Apache OpenNLP — 1 operation(s) for language detection.
+- [Apache OpenNLP Lemmatization API](https://apis.io/apis/apache-opennlp/apache-opennlp-lemmatization-api/) — The Lemmatization API from Apache OpenNLP — 1 operation(s) for lemmatization.
+- [Apache OpenNLP Models API](https://apis.io/apis/apache-opennlp/apache-opennlp-models-api/) — The Models API from Apache OpenNLP — 2 operation(s) for models.
+- [Apache OpenNLP Named Entity Recognition API](https://apis.io/apis/apache-opennlp/apache-opennlp-named-entity-recognition-api/) — The Named Entity Recognition API from Apache OpenNLP — 1 operation(s) for named entity recognition.
+- [Apache OpenNLP Parsing API](https://apis.io/apis/apache-opennlp/apache-opennlp-parsing-api/) — The Parsing API from Apache OpenNLP — 1 operation(s) for parsing.
+- [Apache OpenNLP POS Tagging API](https://apis.io/apis/apache-opennlp/apache-opennlp-pos-tagging-api/) — The POS Tagging API from Apache OpenNLP — 1 operation(s) for pos tagging.
+- [Apache OpenNLP Sentence Detection API](https://apis.io/apis/apache-opennlp/apache-opennlp-sentence-detection-api/) — The Sentence Detection API from Apache OpenNLP — 1 operation(s) for sentence detection.
+- [Apache OpenNLP Tokenization API](https://apis.io/apis/apache-opennlp/apache-opennlp-tokenization-api/) — The Tokenization API from Apache OpenNLP — 1 operation(s) for tokenization.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache OpenNLP
-OpenNLP provides a Java API for NLP tasks including tokenization, sentence detection, POS tagging, named entity recognition, chunking, parsing, and language detection, with support for training custom models.
+#### Agentic access (1)
 
-**Human URL:** [https://opennlp.apache.org/docs/](https://opennlp.apache.org/docs/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apache Opennlp Agentic Access](https://apis.io/agentic-access/apache-opennlp/apache-opennlp-agentic-access/)
 
- - Java, NLP, Text Processing, Apache, Open Source, Machine Learning
+#### JSON Schema (18)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://opennlp.apache.org/docs/)
-- [OpenAPI](openapi/apache-opennlp-tools.yaml)
+- [CategorizationResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-categorization-result/)
+- [Chunk](https://apis.io/schemas/apache-opennlp/apache-opennlp-chunk/)
+- [ChunkingResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-chunking-result/)
+- [LanguageDetectionResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-language-detection-result/)
+- [LanguageProbability](https://apis.io/schemas/apache-opennlp/apache-opennlp-language-probability/)
+- [LemmatizationResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-lemmatization-result/)
+- [ModelInfo](https://apis.io/schemas/apache-opennlp/apache-opennlp-model-info/)
+- [ModelList](https://apis.io/schemas/apache-opennlp/apache-opennlp-model-list/)
+- [NamedEntity](https://apis.io/schemas/apache-opennlp/apache-opennlp-named-entity/)
+- [NERResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-ner-result/)
+- [ParseResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-parse-result/)
+- [POSTaggingResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-pos-tagging-result/)
+- [POSTokensRequest](https://apis.io/schemas/apache-opennlp/apache-opennlp-pos-tokens-request/)
+- [SentenceDetectionResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-sentence-detection-result/)
+- [Span](https://apis.io/schemas/apache-opennlp/apache-opennlp-span/)
+- [TextRequest](https://apis.io/schemas/apache-opennlp/apache-opennlp-text-request/)
+- [TokenizationResult](https://apis.io/schemas/apache-opennlp/apache-opennlp-tokenization-result/)
+- [TokensRequest](https://apis.io/schemas/apache-opennlp/apache-opennlp-tokens-request/)
 
-## Common Properties
+#### JSON Structure (18)
 
-- [GitHubOrganization](https://github.com/apache/opennlp)
+Data models expressed in JSON Structure.
+
+- [Apache Opennlp Categorization Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-categorization-result-structure/)
+- [Apache Opennlp Chunk Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-chunk-structure/)
+- [Apache Opennlp Chunking Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-chunking-result-structure/)
+- [Apache Opennlp Language Detection Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-language-detection-result-structure/)
+- [Apache Opennlp Language Probability Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-language-probability-structure/)
+- [Apache Opennlp Lemmatization Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-lemmatization-result-structure/)
+- [Apache Opennlp Model Info Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-model-info-structure/)
+- [Apache Opennlp Model List Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-model-list-structure/)
+- [Apache Opennlp Named Entity Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-named-entity-structure/)
+- [Apache Opennlp Ner Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-ner-result-structure/)
+- [Apache Opennlp Parse Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-parse-result-structure/)
+- [Apache Opennlp Pos Tagging Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-pos-tagging-result-structure/)
+- [Apache Opennlp Pos Tokens Request Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-pos-tokens-request-structure/)
+- [Apache Opennlp Sentence Detection Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-sentence-detection-result-structure/)
+- [Apache Opennlp Span Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-span-structure/)
+- [Apache Opennlp Text Request Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-text-request-structure/)
+- [Apache Opennlp Tokenization Result Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-tokenization-result-structure/)
+- [Apache Opennlp Tokens Request Structure](https://apis.io/json-structure/apache-opennlp/apache-opennlp-tokens-request-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apache Opennlp Context](https://apis.io/jsonld/apache-opennlp/apache-opennlp-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache Opennlp Vocabulary](https://apis.io/vocabularies/apache-opennlp/apache-opennlp-vocabulary/)
+
+#### Examples (18)
+
+Example requests and responses.
+
+- [Apache Opennlp Categorization Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-categorization-result-example/)
+- [Apache Opennlp Chunk Example](https://apis.io/examples/apache-opennlp/apache-opennlp-chunk-example/)
+- [Apache Opennlp Chunking Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-chunking-result-example/)
+- [Apache Opennlp Language Detection Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-language-detection-result-example/)
+- [Apache Opennlp Language Probability Example](https://apis.io/examples/apache-opennlp/apache-opennlp-language-probability-example/)
+- [Apache Opennlp Lemmatization Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-lemmatization-result-example/)
+- [Apache Opennlp Model Info Example](https://apis.io/examples/apache-opennlp/apache-opennlp-model-info-example/)
+- [Apache Opennlp Model List Example](https://apis.io/examples/apache-opennlp/apache-opennlp-model-list-example/)
+- [Apache Opennlp Named Entity Example](https://apis.io/examples/apache-opennlp/apache-opennlp-named-entity-example/)
+- [Apache Opennlp Ner Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-ner-result-example/)
+- [Apache Opennlp Parse Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-parse-result-example/)
+- [Apache Opennlp Pos Tagging Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-pos-tagging-result-example/)
+- [Apache Opennlp Pos Tokens Request Example](https://apis.io/examples/apache-opennlp/apache-opennlp-pos-tokens-request-example/)
+- [Apache Opennlp Sentence Detection Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-sentence-detection-result-example/)
+- [Apache Opennlp Span Example](https://apis.io/examples/apache-opennlp/apache-opennlp-span-example/)
+- [Apache Opennlp Text Request Example](https://apis.io/examples/apache-opennlp/apache-opennlp-text-request-example/)
+- [Apache Opennlp Tokenization Result Example](https://apis.io/examples/apache-opennlp/apache-opennlp-tokenization-result-example/)
+- [Apache Opennlp Tokens Request Example](https://apis.io/examples/apache-opennlp/apache-opennlp-tokens-request-example/)
+
+#### Collections (10)
+
+Postman and Open Collection request collections.
+
+- [Apache OpenNLP Tools Chunking API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-chunking-api/)
+- [Apache OpenNLP Tools Chunking Document Categorization API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-document-categorization-api/)
+- [Apache OpenNLP Tools Chunking Language Detection API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-language-detection-api/)
+- [Apache OpenNLP Tools Chunking Lemmatization API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-lemmatization-api/)
+- [Apache OpenNLP Tools Chunking Models API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-models-api/)
+- [Apache OpenNLP Tools Chunking Named Entity Recognition API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-named-entity-recognition-api/)
+- [Apache OpenNLP Tools Chunking Parsing API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-parsing-api/)
+- [Apache OpenNLP Tools Chunking POS Tagging API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-pos-tagging-api/)
+- [Apache OpenNLP Tools Chunking Sentence Detection API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-sentence-detection-api/)
+- [Apache OpenNLP Tools Chunking Tokenization API](https://apis.io/collections/apache-opennlp/open-apache-opennlp-tokenization-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache OpenNLP — jsonschema rules](https://apis.io/rules/apache-opennlp/apache-opennlp-jsonschema-spectral-rules/)
+- [Apache OpenNLP API Rules](https://apis.io/rules/apache-opennlp/apache-opennlp-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Opennlp Domain Security](https://apis.io/security/apache-opennlp/apache-opennlp-domain-security/)
+- [Apache Opennlp Vulnerability Disclosure](https://apis.io/security/apache-opennlp/apache-opennlp-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Opennlp Plans Pricing](https://apis.io/plans/apache-opennlp/apache-opennlp-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Opennlp Rate Limits](https://apis.io/rate-limits/apache-opennlp/apache-opennlp-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Opennlp Finops](https://apis.io/finops/apache-opennlp/apache-opennlp-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://opennlp.apache.org/)
-- [GettingStarted](https://opennlp.apache.org/docs/)
-- [SpectralRules](rules/apache-opennlp-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-opennlp-vocabulary.yaml)
-- [NaftikoCapability](capabilities/nlp-pipeline-workflow.yaml)
-- [JSON-LD](json-ld/apache-opennlp-context.jsonld)
+- [Getting started](https://opennlp.apache.org/docs/)
+- [Blog](https://opennlp.apache.org/feed.xml)
+- [GitHub](https://github.com/apache/opennlp)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Language Detection | Detects document language using ISO-639-3 classification |
-| Sentence Detection | Splits text into individual sentences with character offsets |
-| Tokenization | Segments text into words and punctuation with position tracking |
-| Named Entity Recognition | Detects persons, locations, organizations, and other named entities |
-| POS Tagging | Assigns Penn Treebank POS tags to each token |
-| Lemmatization | Reduces tokens to their dictionary base forms |
-| Chunking | Identifies noun phrases, verb phrases, and other syntactic chunks |
-| Parsing | Builds full syntactic parse trees using constituency parsing |
-| Document Categorization | Classifies documents into predefined categories |
-| Custom Model Training | Train custom models with Maxent, Perceptron, or Naive Bayes algorithms |
+**Kin Score 21.4** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 19.1 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| Information Extraction | Extract structured data from unstructured text documents |
-| Text Classification | Automatically categorize documents by topic or sentiment |
-| Search Enhancement | Improve search relevance with NLP-based query processing |
-| Content Analysis | Analyze large text corpora for entities, topics, and patterns |
-| Chatbot Development | Build conversational AI with NLP intent and entity extraction |
+**Agent readiness 15.4** — agent-aware
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Apache Solr | Integrate OpenNLP with Apache Solr for NLP-enhanced search |
-| Apache Lucene | Use OpenNLP analyzers in Lucene text processing pipelines |
-| Apache Flink | Real-time NLP processing with Apache Flink data streams |
-| UIMA | Apache UIMA framework integration for unstructured information analysis |
-| Maven/Gradle | Available on Maven Central for Java build system integration |
+**Regulatory alignment 15.5** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-opennlp/](https://apis.io/providers/apache-opennlp/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Apache OpenNLP Tools API](openapi/apache-opennlp-tools.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache OpenNLP: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [Text Request](json-schema/apache-opennlp-text-request-schema.json)
-- [Tokens Request](json-schema/apache-opennlp-tokens-request-schema.json)
-- [Language Detection Result](json-schema/apache-opennlp-language-detection-result-schema.json)
-- [Named Entity](json-schema/apache-opennlp-named-entity-schema.json)
-- [NER Result](json-schema/apache-opennlp-n-e-r-result-schema.json)
-- [POS Tagging Result](json-schema/apache-opennlp-p-o-s-tagging-result-schema.json)
-- [Parse Result](json-schema/apache-opennlp-parse-result-schema.json)
-- [Model Info](json-schema/apache-opennlp-model-info-schema.json)
-- [And more...](json-schema/)
-
-### JSON Structure
-
-- [Apache OpenNLP JSON Structures](json-structure/)
-
-### JSON-LD
-
-- [Apache OpenNLP Context](json-ld/apache-opennlp-context.jsonld)
-
-### Examples
-
-- [Apache OpenNLP Examples](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [OpenNLP Tools API](capabilities/shared/opennlp-tools.yaml) — Core NLP operations for text processing
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [NLP Pipeline Workflow](capabilities/nlp-pipeline-workflow.yaml) | OpenNLP | 10 | Data Scientist, NLP Engineer, Application Developer |
-
-## Vocabulary
-
-- [Apache OpenNLP Vocabulary](vocabulary/apache-opennlp-vocabulary.yaml) — Unified taxonomy mapping NLP resources, actions, workflows, and personas
-
-## Rules
-
-- [Apache OpenNLP Spectral Rules](rules/apache-opennlp-spectral-rules.yml) — 10 rules enforcing Apache OpenNLP API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-opennlp/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
